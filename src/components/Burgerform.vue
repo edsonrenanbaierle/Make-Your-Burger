@@ -11,21 +11,21 @@
           <label for="bread">Escolha o pão:</label>
           <select name="bread" id="bread" v-model="bread">
             <option value="">Selecione o seu pão</option>
-            <option value="integral">Integral</option>
+            <option v-for="pao in breadsServer" :key="pao.id" :value="pao.tipo">{{pao.tipo}}</option>
           </select>
         </div>
         <div class="input-container">
           <label for="meat">Escolha a carne do seu Burger:</label>
           <select name="meat" id="meat" v-model="bread">
             <option value="">Selecione o tipo de carne</option>
-            <option value="picanha">Picanha</option>
+            <option v-for="carne in meatsServer" :key="carne.id" value="carne.tipo">{{ carne.tipo }}</option>
           </select>
         </div>
         <div class="input-container" id="optional-container">
           <label id="optional-title" for="optional">Escolha os opcionais:</label>
-          <div class="checkbox-container">
-            <input type="checkbox" v-model="optional" name="optional" value="Salame">
-            <span>Salame</span>
+          <div class="checkbox-container" v-for="opcionais in optionalDataServer" :key="opcionais.id">
+            <input type="checkbox" v-model="optional" name="optional" :value="opcionais.tipo">
+            <span>{{opcionais.tipo}}</span>
           </div>
         </div>
         <div class="input-container">
@@ -38,7 +38,33 @@
 
 <script>
 export default {
-  name: 'Burgerform'
+  name: 'Burgerform',
+  data(){
+    return {
+      breadsServer: null, 
+      meatsServer: null,
+      optionalDataServer: null,
+      name: null,
+      bread: null,
+      meat: null,
+      optional: [],
+      status: 'Solicitado',
+      msg: null
+    }
+  },
+  methods: {
+    async getIngredientes() {
+      const req = await fetch("http://localhost:3000/ingredientes");
+      const data = await req.json();
+
+      this.breadsServer = data.paes;
+      this.meatsServer = data.carnes;
+      this.optionalDataServer = data.opcionais;
+    }
+  },
+  mounted(){
+    this.getIngredientes();
+  }
 }
 </script>
 
