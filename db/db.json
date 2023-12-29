@@ -101,18 +101,6 @@
       "id": 2
     },
     {
-      "nome": "João",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
       "nome": "Iury",
       "carne": "Alcatra",
       "pao": "3 Queijos",
@@ -123,29 +111,6 @@
       ],
       "status": "Solicitado",
       "id": 4
-    },
-    {
-      "nome": "Felipe",
-      "carne": "Veggie burger",
-      "pao": "Integral",
-      "opcionais": [
-        "Bacon",
-        "Tomate",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 5
-    },
-    {
-      "nome": "Teste",
-      "carne": "Veggie burger",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Cebola roxa",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 6
     }
   ]
 }
