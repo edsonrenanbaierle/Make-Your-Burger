@@ -86,11 +86,15 @@ export default {
       //msg
       this.msg = `Pedido ${res.id} realizado com sucesso!`
 
+      setTimeout(() => {
+        this.msg = ''
+      }, 3000);
+
       // limpar dados
       this.name = ''
       this.meat = ''
       this.bread = ''
-      this.optional =''
+      this.optional = []
 
     }
   },
