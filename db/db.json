@@ -86,7 +86,7 @@
         "Bacon",
         "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
@@ -99,18 +99,6 @@
       ],
       "status": "Solicitado",
       "id": 2
-    },
-    {
-      "nome": "Iury",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Cheddar",
-        "Pepino",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 4
     }
   ]
 }
